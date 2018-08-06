@@ -1,0 +1,195 @@
+<!doctype html>
+<html>
+<meta charset="utf-8">
+<title>たまなび バス運行情報検索</title>
+<link rel="shortcut icon" href="./static/images/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="stylesheet" href="./static/csss/pagecss.css" type="text/css"/>
+<script type="text/javascript" src="./static/scripts/navitama.js"></script>
+<body>
+<p class="navitama" style="font-family:Arial, Helvetica, sans-serif;">
+<a href="http://192.168.145.223:8080/"><img src="./static/images/tamalogo.png" align="bottom"></a>
+<b>多摩キャンパス学内バス運行情報</b>
+</p>
+<hr color="#F1F1F1">
+<!-- バス停をセレクトボックスで選ぶ -->
+<div class="main" id="main">
+<form name="form1" method="get" action="http://192.168.145.223:8080/">
+<br><b>乗車停留所 </b>
+<select class="location" name="stopid" id="location" onChange="button()">
+<option value="selectlocation" >選択してください</option>
+<option value="stop1">体育館</option>
+<option value="stop2">正門・総合棟・経済</option>
+<option value="stop3">エッグドーム</option>
+<option value="stop4">スポーツ健康学部</option>
+</select>
+<input type="submit" style="margin-left:20px;" value="検索" class="search" id="search" >
+</form>
+
+<!-- セレクトボックスと検索ボタンの見た目
+ デザインが気に入らなければ、ここは好きに編集してもらってok -->
+<!-- 最初にアクセスしたときの表を作成(デフォルトでどこかのバス停の情報を載せる予定)
+<table border="1" class="timetable" id="timetable">
+<tr>
+<th>停留所時刻表</th>
+<th>予測到着時刻</th>
+<th>到着までの時間</th>
+</tr>
+<tr>
+<td>{{.time1}}</td>
+<td>{{.time2}}</td>
+<td>{{.time3}}</td>
+</tr>
+<tr>
+<td>{{.time4}}</td>
+<td>{{.time5}}</td>
+<td>{{.time6}}</td>
+</tr>
+<tr>
+<td>{{.time7}}</td>
+<td>{{.time8}}</td>
+<td>{{.time9}}</td>
+</tr>
+</table>-->
+<br>
+百周年記念館前、経済学部棟前で下車を希望する場合、<br>
+乗車時に乗務員にお伝えください。<br>
+意思表示がない場合通過します。<br><br>
+
+<b><h2>{{.busstateMsg}}</h2></b>
+{{.remaintimeMsg}}<br>
+<div id="output" style="text-align:center;"></div>{{.timetableMsg}}
+<div id="outlast" style="text-align:center;"></div>{{.lastbusMsg}}<div id="outdesu" style="text-align:center;"></div><br><!-- ここで地図とバスの場所、バス停の場所を描いたイラストかなんかを載せる
+   (サーバー側がイラストを作るのか、ページ側が作るのかは未定)-->
+ <canvas id="map" class="map" width="900%" height="504%">
+ </canvas>
+
+ <br>
+最新の位置情報はブラウザを更新してご覧下さい。
+ <br><br>
+ <div class="line-it-button" style="display: none;" data-lang="ja" data-type="share-a" data-url="http://192.168.145.223:8080/">
+ </div>
+</div>
+ <img src="./static/images/bus.png" alt="" width="60px" height="35px" class="bus1" id="bus1">
+ <img src="./static/images/bus.png" alt="" width="60px" height="35px" class="bus2" id="bus2">
+ <img src="./static/images/bus.png" alt="" width="60px" height="35px" class="bus3" id="bus3">
+ <img src="./static/images/bus.png" alt="" width="60px" height="35px" class="bus4" id="bus4">
+ <img src="./static/images/bus.png" alt="" width="60px" height="35px" class="bus5" id="bus5">
+ <img src="./static/images/bus.png" alt="" width="60px" height="35px" class="bus6" id="bus6">
+ <img src="./static/images/bus.png" alt="" width="60px" height="35px" class="bus7" id="bus7">
+ <img src="./static/images/bus.png" alt="" width="60px" height="35px" class="bus8" id="bus8">
+ <img src="./static/images/bus.png" alt="" width="60px" height="35px" class="bus9" id="bus9">
+ <img src="./static/images/bus.png" alt="" width="60px" height="35px" class="bus10" id="bus10">
+ <img src="./static/images/bus.png" alt="" width="60px" height="35px" class="bus11" id="bus11">
+ {{if .location1}}
+ <script>
+ console.log("1");
+ </script>
+ <style>
+ .bus1{
+	 display:inline;
+ }
+ </style>
+ {{end}}
+  {{if .location2}}
+  <script>
+  console.log("2");
+  </script>
+ <style>
+ .bus2{
+	 display:inline;
+ }
+ </style>
+ {{end}}
+  {{if .location3}}
+  <script>
+  console.log("3");
+  </script>
+ <style>
+ .bus3{
+	 display:inline;
+ }
+ </style>
+ {{end}}
+  {{if .location4}}
+  <script>
+  console.log("4");
+  </script>
+ <style>
+ .bus4{
+	 display:inline;
+ }
+ </style>
+ {{end}}
+  {{if .location5}}
+  <script>
+  console.log("5");
+  </script>
+ <style>
+ .bus5{
+	 display:inline;
+ }
+ </style>
+ {{end}}
+  {{if .location6}}
+  <script>
+  console.log("6");
+  </script>
+ <style>
+ .bus6{
+	 display:inline;
+ }
+ </style>
+ {{end}}
+  {{if .location7}}
+  <script>
+  console.log("7");
+  </script>
+ <style>
+ .bus7{
+	 display:inline;
+ }
+ </style>
+ {{end}}
+  {{if .location8}}
+  <script>
+  console.log("8");
+  </script>
+ <style>
+ .bus8{
+	 display:inline;
+ }
+ </style>
+ {{end}}
+  {{if .location9}}
+  <script>
+  console.log("9");
+  </script>
+ <style>
+ .bus9{
+	 display:inline;
+ }
+ </style>
+ {{end}}
+  {{if .location10}}
+  <script>
+  console.log("10");
+  </script>
+ <style>
+ .bus10{
+	 display:inline;
+ }
+ </style>
+ {{end}}
+  {{if .location11}}
+  <script>
+  console.log("11");
+  </script>
+ <style>
+ .bus11{
+	 display:inline;
+ }
+ </style>
+ {{end}}
+ <script src="https://d.line-scdn.net/r/web/social-plugin/js/thirdparty/loader.min.js" async="async" defer="defer"></script>
+</body>
+</html>

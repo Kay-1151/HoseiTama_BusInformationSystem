@@ -1,0 +1,149 @@
+@charset "UTF-8";
+.main{
+	width:100%;
+	text-align:center;
+	font-family:Arial, Helvetica, sans-serif;
+}
+.main div{
+	width:95%;
+	margin:0 auto;
+	text-align:left;
+	font-family:Arial, Helvetica, sans-serif;
+}
+.navitama img{
+	width:20%;
+	height:auto;
+	}
+.location{
+	width:230px;
+	border-radius: 5px 5px 5px 5px;
+	appearance:none;
+	-webkit-appearance:none;
+	-moz-appearance:none;
+	background: #ffffff;
+	font-size:20px;
+
+}
+.location:hover{
+	cursor:pointer;
+}
+.search{
+	-webkit-appearance:none;
+	position: relative;
+	background: #00BFFF;
+	border: 1px solid #00BFFF;
+	color: #fff;
+	width: 120px;
+	height: 40px;
+	font-size: 20px;
+	font-family:Arial, Helvetica, sans-serif;
+	line-height:1.8;
+	cursor:pointer;
+	border-radius: 5px 5px 5px 5px;
+}
+.search:hover{
+	color: #fff;
+	border-color:#1e90FF;
+	background:#1e90FF;
+}
+.timetable{
+	top: 70%;
+	border: 1px #E3E3E3 solid;
+	border-spacing: 0;
+	margin-right:auto;
+	margin-left:auto;
+}
+/* th {
+	background: #FFF4E2;
+	padding: 5px;
+	border-style:solid;
+	text-align: center;
+	font-weight: bold;
+	border-width: 1pt 1pt 1pt 1pt;
+	border-color:#000000;
+	line-height: 120%;
+}
+td {
+	background: #F4F4F4;
+	padding: 5px;
+	border-style:solid;
+	border-width: 1pt 1pt 1pt 1pt;
+	border-color:#000000;
+	text-align: center;
+} */
+
+.map{
+	top:60%;
+	max-width:100%;
+	margin-right:auto;
+	margin-left:auto;
+}
+
+@media screen and (max-width:480px){
+}
+.bus1{
+	position:absolute;
+	left:65px;
+	top:70px;
+	display: none;
+}
+.bus2{
+	position:absolute;
+	left:20px;
+	top:130px;
+	display:none;
+}
+.bus3{
+	position:absolute;
+	left:150px;
+	top:145px;
+	display:none;
+}
+.bus4{
+	position:absolute;
+	left:270px;
+	top:110px;
+	display:none;
+}
+.bus5{
+	position:absolute;
+	left:400px;
+	top:110px;
+	display:none;
+}
+.bus6{
+	position:absolute;
+	left:520px;
+	top:130px;
+	display:none;
+}
+.bus7{
+	position:absolute;
+	left:520px;
+	top:225px;
+	display:none;
+}
+.bus8{
+	position:absolute;
+	left:490px;
+	top:325px;
+	display:none;
+}
+.bus9{
+	position:absolute;
+	left:630px;
+	top:420px;
+	display:none;
+}
+.bus10{
+	position:absolute;
+	left:740px;
+	top:395px;
+	display:none;
+}
+.bus11{
+	position:absolute;
+	left:830px;
+	top:400px;
+	display:none;
+}
