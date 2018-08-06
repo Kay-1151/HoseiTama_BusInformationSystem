@@ -37,7 +37,7 @@ func inTime(begin time.Time, end time.Time, target time.Time) bool {
 func timeParse(str string) []time.Time {
   result := []time.Time{}
   t := time.Now()
-  t = time.Date(2018, 8, 3, 10, 41, 23, 0, time.Local)
+  //t = time.Date(2018, 8, 3, 10, 41, 23, 0, time.Local)
   year := t.Year() //現在年
   month := t.Month() //現在月
   day := t.Day() //現在日
@@ -134,7 +134,7 @@ func topPageHandler(w http.ResponseWriter ,r *http.Request){
     //stopidが送信されれば
     stopid = r.Form["stopid"][0] //stop? (string)
     t := time.Now() //現在時刻
-    t = time.Date(2018, 8, 3, 10, 41, 23, 0, time.Local)
+    //t = time.Date(2018, 8, 3, 10, 41, 23, 0, time.Local)
     week := t.Weekday().String() //現在曜日(string)
     var timetableCSV string //運行時間のcsv
     var locationsCSV string //gps測定地点のcsv

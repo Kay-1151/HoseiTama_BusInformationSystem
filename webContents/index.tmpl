@@ -7,13 +7,13 @@
 <script type="text/javascript" src="./static/scripts/navitama.js"></script>
 <body>
 <p class="navitama" style="font-family:Arial, Helvetica, sans-serif;">
-<a href="http://192.168.145.223:8080/"><img src="./static/images/tamalogo.png" align="bottom"></a>
+<a href="http://localhost:8080/"><img src="./static/images/tamalogo.png" align="bottom"></a>
 <b>多摩キャンパス学内バス運行情報</b>
 </p>
 <hr color="#F1F1F1">
 <!-- バス停をセレクトボックスで選ぶ -->
 <div class="main" id="main">
-<form name="form1" method="get" action="http://192.168.145.223:8080/">
+<form name="form1" method="get" action="http://localhost:8080/">
 <br><b>乗車停留所 </b>
 <select class="location" name="stopid" id="location" onChange="button()">
 <option value="selectlocation" >選択してください</option>
@@ -66,7 +66,7 @@
  <br>
 最新の位置情報はブラウザを更新してご覧下さい。
  <br><br>
- <div class="line-it-button" style="display: none;" data-lang="ja" data-type="share-a" data-url="http://192.168.145.223:8080/">
+ <div class="line-it-button" style="display: none;" data-lang="ja" data-type="share-a" data-url="http://localhost:8080/">
  </div>
 </div>
  <img src="./static/images/bus.png" alt="" width="60px" height="35px" class="bus1" id="bus1">
